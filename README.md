@@ -4,6 +4,7 @@
 Voldemort's Wand (Kyle)
 
 ## Notes
+#### Windows Registry Editor
 
 ## Nvidia Control Panel
 
@@ -15,8 +16,8 @@ Voldemort's Wand (Kyle)
 	  (EX: OBS Nvenc encoding or Nvidia Shadowplay)
 ##### 3 Ways to Cap Framerate
 Sources
-[An analysis of their frame time consistency and approximate input lag](https://www.reddit.com/r/allbenchmarks/comments/f5l6pk/nvidias_control_panel_fps_limiter_vs_rivatuner_vs/)
-[NVIDIA's NEW FPS Limiter vs. RTSS & In-Engine Limiters / Input Lag Results](https://www.youtube.com/watch?v=W66pTe8YM2s)
+- [An analysis of their frame time consistency and approximate input lag](https://www.reddit.com/r/allbenchmarks/comments/f5l6pk/nvidias_control_panel_fps_limiter_vs_rivatuner_vs/)
+- [NVIDIA's NEW FPS Limiter vs. RTSS & In-Engine Limiters / Input Lag Results](https://www.youtube.com/watch?v=W66pTe8YM2s)
 - Nvidia Control Panel
 	- Relatively as consistent as RTSS
 	- Changes apply only on application startup
@@ -39,8 +40,8 @@ Sources
 
 ## Processor Scheduling
 ##### Sources
-[Adjusting this WINDOWS setting to get MORE FPS & Lower Latency](https://www.youtube.com/watch?v=ZzEwbjkfRK0)
-[Calypto's Latency Guide](https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit)
+- [Adjusting this WINDOWS setting to get MORE FPS & Lower Latency](https://www.youtube.com/watch?v=ZzEwbjkfRK0)
+- [Calypto's Latency Guide](https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit)
 ##### Why?
 - Make Windows prioritize your game over your background processes. Currently it is set to balance both. 
 - To improve 1% and .1% Lows --> Reduce the effects of stuttering
@@ -60,9 +61,17 @@ Sources
 			   - Apply some prioritization to background services
 				   - Value: `2X --> 2A`
 		   - Changes apply instantly on save     
-		   - Warning! These reg changes have the possiblity of starving your background processes resources. Be wary when this with OBS, Voicemeeter, or SteelSeries Sonar.
+		   - Warning! These reg changes have the possiblity of starving your background processes. Be wary when using this with OBS, Voicemeeter, or SteelSeries Sonar.
 
 ## The LUA Setting
+- Modified using Windows Registry
+	- Location: ` Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
+	- Reg Name: EnableLUA
+- What this setting is responsible for
+	- When true (by default), this setting officially notifies you when programs try to make changes to the computer.
+	- When disabled, this will cause some Windows UWP Applications to not be able to lock in your cursor. This is problematic for games like Minecraft Windows 10/11 Edition.
+- More Info
+	- [Enable LUA | Microsoft](https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-lua-settings-enablelua)
 
 
 
